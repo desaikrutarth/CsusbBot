@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ChatBot.Models.Courses>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Courses</h2>
+
+<table class="table table-bordered table-hover">
+
+    <thead>
+
+        <tr>
+
+            <th>Course Number</th>
+            <th>Course Name</th>
+            <th>Time</th>
+            <th>Room No.</th>
+            <th>No. of Units</th>
+            <th>Professors</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var items in Model)
+        {
+            <tr>
+                <td> @items.number </td>
+                <td> @items.name</td>
+                <td> @items.time</td>
+                <td> @items.location</td>
+                <td> @items.noOfUnits</td>
+                <td> @items.professors.lname</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
